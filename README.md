@@ -19,12 +19,11 @@
 
 ---
 
-## 🚀 快速开始 (小白用户必读) / Quick Start
+## 🚀 快速开始 / Quick Start
 
 如果您不懂代码，只想要使用软件，请按照以下步骤操作：
 
 ### 第一步：安装必备的 OCR 引擎
-
 本软件依赖 **Tesseract-OCR** 来识别文字，请先下载并安装它。
 
 1.  **下载安装包** (任选一个下载)：
@@ -38,10 +37,17 @@
     - *如果安装在其他盘，程序可能找不到它，需要您手动配置环境变量。*
     - 一路点击 Next 直到完成。
 
-### 第二步：运行软件
+### 第二步：安装 Python 环境
 
-1.  下载本项目的 `dist` 文件夹中的 `进大哥房间快人一百步.exe` (或者下载 Release 版本)。
-2.  双击运行 `进大哥房间快人一百步.exe`。
+1.  下载 **[Python 3.12 安装包](https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe)**。
+2.  运行安装包，**务必勾选 "Add Python to PATH" (添加到环境变量)**。
+3.  点击 "Install Now" 完成安装。
+
+### 第三步：运行软件
+1.  下载本项目源码（点击右上角绿色的 Code -> Download ZIP，然后解压）。
+2.  双击解压文件夹中的 **`run_monitor.bat`**。
+    *   脚本会自动为您安装依赖库（需要联网）并启动软件。
+    *   *如果闪退，请参考下方的“开发者指南”手动安装依赖。*
 
 ---
 
@@ -71,28 +77,26 @@
 
 ## 👨‍💻 开发者指南 (源码运行) / For Developers
 
-如果您是开发者，想修改源码或自己编译：
+如果您是开发者，想修改源码或自己编译。
 
 ### 1. 环境准备 (Prerequisites)
-确保已安装 Python 3.8+。
+1.  安装 [Python 3.8+](https://www.python.org/downloads/) (安装时请勾选 "Add Python to PATH")。
+2.  下载本项目源码。
 
 ```bash
-# 克隆仓库 (Clone repo)
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-
-# 安装依赖 (Install requirements)
+# 在解压后的文件夹中打开终端/命令行，运行以下命令安装依赖
 pip install -r requirements.txt
 ```
 
-### 2. 运行源码 (Run Source)
+### 2. 运行程序 (Run)
+双击文件夹中的 `run_monitor.bat` 脚本即可直接启动！
+
+或者在终端运行：
 ```bash
 python screen_monitor.py
-# 或者运行脚本 (Or run script)
-./run_monitor.bat
 ```
 
-### 3. 打包成 EXE (Build EXE)
+### 3. (可选) 自己打包 EXE (Build EXE)
 如果您想自己生成 exe 文件：
 ```bash
 pip install pyinstaller
@@ -125,6 +129,8 @@ This is a Python-based screen area monitoring tool. It watches a specified area 
 
 **Main Uses:** Grabbing room numbers, quickly extracting verification codes, monitoring dynamic data changes, etc.
 
+---
+
 ## ✨ Features
 
 *   **🎯 Precise Selection**: Click to dim the screen, drag to select any area. WYSIWYG.
@@ -134,25 +140,35 @@ This is a Python-based screen area monitoring tool. It watches a specified area 
 *   **🛡️ Noise Filtering**: Smart algorithm filters out text and symbols, extracting only pure digits (e.g., `Room: 123456` -> `123456`).
 *   **🖥️ HD Support**: Fully supports Windows High DPI scaling.
 
+---
+
 ## 🚀 Quick Start
 
-### Step 1: Install OCR Engine (Required!)
+If you are not a coder and just want to use the software, follow these steps:
 
+### Step 1: Install OCR Engine (Required!)
 This software depends on **Tesseract-OCR**.
 
 1.  **Download Installer**:
     - **Official (v5.3.0)**: [Download Here](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.3.0.20221214.exe)
-    - **SourceForge Mirror**: [Download Here](https://sourceforge.net/projects/tesseract-ocr.mirror/files/5.3.0/tesseract-ocr-w64-setup-v5.3.0.20221214.exe/download)
+    - **SourceForge Mirror (Faster in China)**: [Download Here](https://sourceforge.net/projects/tesseract-ocr.mirror/files/5.3.0/tesseract-ocr-w64-setup-v5.3.0.20221214.exe/download)
 
 2.  **Install**:
     - Run the installer.
     - **Important**: Keep the default path `C:\Program Files\Tesseract-OCR`.
-    - If installed elsewhere, please add the installation path to your system's PATH environment variable.
+    - *If installed elsewhere, you must add the installation path to your system's PATH environment variable.*
 
-### Step 2: Run
+### Step 2: Install Python Environment
 
-1.  Download `进大哥房间快人一百步.exe` from the `dist` folder.
-2.  Double-click to run.
+1.  Download **[Python 3.12 Installer](https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe)**.
+2.  Run the installer and **Check "Add Python to PATH"**.
+3.  Click "Install Now".
+
+### Step 3: Run
+1.  Download source code (Click Green "Code" button -> Download ZIP, then unzip).
+2.  Double-click **`run_monitor.bat`** in the folder.
+    *   The script will automatically install dependencies and start the app.
+    *   *If it crashes, refer to the "For Developers" section to install dependencies manually.*
 
 ---
 
@@ -173,10 +189,57 @@ This software depends on **Tesseract-OCR**.
 5.  **Auto Copy**:
     - You can now do other things.
     - Once digits appear in that area, the software will display the result below and show **"Copied: xxxxxx"**.
-    - You only need to use an office suite (e.g., vivo Office Suite) to sync the PC clipboard to your phone, allowing you to enter Big Brother's room number one step ahead.
+    - Sync the clipboard to your phone to enter the room number instantly.
 6.  **Stop/Exit**:
     - Click the red **【Stop Monitoring】** button to pause.
     - Close the window to exit.
+
+---
+
+## 👨‍💻 For Developers (Source Code)
+
+If you are a developer and want to modify the code or build it yourself.
+
+### 1. Prerequisites
+1.  Install [Python 3.8+](https://www.python.org/downloads/) (Check "Add Python to PATH").
+2.  Download source code.
+
+```bash
+# Open terminal in the folder and run:
+pip install -r requirements.txt
+```
+
+### 2. Run
+Double-click `run_monitor.bat` to start.
+
+Or run in terminal:
+```bash
+python screen_monitor.py
+```
+
+### 3. (Optional) Build EXE
+If you want to build the exe yourself:
+```bash
+pip install pyinstaller
+pyinstaller --noconsole --onefile --name "EnterRoomOneStepAhead" screen_monitor.py
+```
+The executable will be in `dist/`.
+
+---
+
+## ❓ Q&A
+
+**Q: Error "Tesseract Not Found"?**
+A: You haven't installed Tesseract-OCR or it's not in the default path. See "Quick Start" Step 1. Ensure path is `C:\Program Files\Tesseract-OCR` or add it to PATH.
+
+**Q: Why are recognized numbers incorrect?**
+A: Check the "Preview".
+   - Area too small? Make it slightly larger.
+   - Too much text? Try to select only the digits.
+   - Complex background? Works best with black/white digits on plain background.
+
+**Q: UI is cut off or buttons unclickable?**
+A: This is due to Windows DPI scaling (e.g., 150%). The latest code has fixed this. Please ensure you are using the latest version.
 
 ---
 
